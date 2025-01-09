@@ -1,6 +1,3 @@
-import { useState, useEffect } from "react";
-
-  
 export default function LearningSectionRecord({details}){
     return(
       <div className="max-w-8xl mx-auto py-20 px-8">
