@@ -1,6 +1,25 @@
+
+import { useState } from "react"
+import Form from "./Form"
+
 export default function PricingCard({details}){
+    const [formLoad,setFormLoad]=useState(false);
+//     const handleForm=()=>{
+
+//     if(formLoad){
+//         setFormLoad(false);
+//         return(
+//             <div>
+//                <Form/>
+//             </div>
+          
+//         )
+//     }
+// }  Will use these later 
+    
     if(details.featured)
     {
+    
         return(
             <div className="w-full bg-white border-yellow-400 mb-2 hover:border-4 max-w-sm rounded lg p-6">
                <h3 className="text-purple-500 text-xl mb-4 uppercase">{details.title}</h3>
@@ -15,12 +34,14 @@ export default function PricingCard({details}){
                     </li>
                 ))}
                </ul>
-               <button className="mx-auto w-full block bg-yellow-400 px-4 py-2 rounded-md text-white mt-6 mb-4">{details.buttonText}</button>
+               <button onClick={()=>setFormLoad(true)} className="mx-auto w-full block bg-yellow-400 px-4 py-2 rounded-md text-white mt-6 mb-4">{details.buttonText}</button>
                 {details.finePrint && <small className="text-black-200 block text-center text-xm">{details.finePrint}</small>}
+                {formLoad && <Form/>}
             </div>
         )
     }
     else{
+       
         return(
             <div className="w-full bg-purple-500 max-w-sm rounded lg p-6 hover:border-purple-400 hover:border-4">
                <h3 className="text-white text-xl mb-4 uppercase">{details.title}</h3>
@@ -35,8 +56,10 @@ export default function PricingCard({details}){
                     </li>
                 ))}
                </ul>
-               <button className="mx-auto w-full block bg-purple-400 px-4 py-2 rounded-md text-white mt-6 mb-4">{details.buttonText}</button>
+               <button onClick={()=>setFormLoad(true)} className="mx-auto w-full block bg-purple-400 px-4 py-2 rounded-md text-white mt-6 mb-4">{details.buttonText}</button>
                 {details.finePrint && <small className="text-purple-200 block text-center text-xm">{details.finePrint}</small>}
+                {formLoad && <Form/>}
+                
             </div>
         )
     }

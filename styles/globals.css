@@ -1,4 +1,52 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+.image-container {
+    position: relative;
+    display: inline-block; /* Ensures proper layout for the image and pop-up */
+  }
+  
+  .hover-image {
+    width: 300px;
+    height: 300px;
+    display: block;
+  }
+  
+  .hover-popup {
+    top: "0";
+    left: "0";
+    width: "100%";
+    height: "100%";
+    background-color: "rgba(255, 255, 255, 0.9)";
+    padding: "20px";
+    border-radius: "8px";
+    box-shadow: "0 8px 16px rgba(0, 0, 0, 0.4)";
+    display: "none";
+    align-items: "center";
+    justify-content: "center";
+    text-align: "center";
+  }
+  
+  .image-container  .hover-popup:hover {
+    display: "block"; /* Show the pop-up on hover */
+  }
+  .shadow-height-8 {
+    box-shadow: 0 4px 4px rgba(8, 8, 8, 0.5); /* Example custom shadow */
+  }
+  
+.box {
+    width: 200px;
+    height: 200px;
+    background-color: #8c13aa;
+    transition: box-shadow 0.3s ease;
+}
 
+.box:hover {
+    box-shadow: 10px 10px 20px rgba(36, 36, 36, 0.5);
+}
+input{
+    border: none;
+    outline: none;
+    width: 400px;
+    height: 40px;
+}
