@@ -1,5 +1,4 @@
-import { Hits, InstantSearch, SearchBox } from 'react-instantsearch-dom';
-import Image from 'next/legacy/image';
+import { Hits, InstantSearch, SearchBox } from 'react-instantsearch';
 import CloseIcon from '@mui/icons-material/Close';
 // import algoliasearch from 'algoliasearch/lite';
 import { algoliasearch } from 'algoliasearch';
