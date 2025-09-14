@@ -2,15 +2,11 @@
 import { gql,GraphQLClient } from "graphql-request";
 import Head from "next/head";
 import Link from "next/link";
-import CourseSection from "../components/CourseSection"
 import React from "react";
 import Image from "next/image";
 import Header from "../components/Header"
-import SearchIcon from '@mui/icons-material/Search';
 import { algoliasearch } from "algoliasearch";
-import { InstantSearch, Hits, SearchBox,RefinementList } from "react-instantsearch";
-import { useEffect, useState } from "react";
-const searchClient=algoliasearch('0HV8WCHOO8','ed8c917fdd900d10ce6c816d53240405');
+
 import Search from "./../components/Search"
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 
@@ -53,7 +49,7 @@ const HOMEPAGE_QUERY= gql`
    }
   }`
 
-export async function getStaticProps(context) {
+export async function getStaticProps() {
   const endpoint = "https://graphql.datocms.com";
 
   const graphQLClient = new GraphQLClient(endpoint, {

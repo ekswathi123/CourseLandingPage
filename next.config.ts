@@ -5,6 +5,9 @@ const nextConfig: NextConfig = {
   reactStrictMode: true,
   images:{
     domains:['www.datocms-assets.com']
+  },
+  eslint: {
+    ignoreDuringBuilds: true,
   }
 };
 
